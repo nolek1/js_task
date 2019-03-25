@@ -1,0 +1,37 @@
+<html>
+	<head></head>
+	<body>
+		<script>
+			var text = "waiting for friday friday friday";
+			function getWordCounter(text, word){
+				var counter = 0;
+				var position = text.indexOf(word);
+				if(position <0) return 0;
+				else{
+					counter++;
+					while (position < text.length){
+						position = text.indexOf(word, position+1);
+						if(position > -1) counter ++;
+						else {
+							return counter;
+						}
+					}
+				}
+			}
+		
+			function returnWords(str, array){
+				var result = [];
+				for(var i=0;i<array.length;i++){
+					var count = getWordCounter(str, array[i]);
+					result.push({
+						"Word":  array[i],
+						"Count": count
+					});
+				}
+			return result;
+		}
+		document.writeln(getWordCounter(text, ["friday"]));
+
+		</script>
+	<body>
+</html>

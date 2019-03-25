@@ -1,0 +1,18 @@
+<html>
+
+<head></head>
+
+<body>
+	<script>
+		function wordsCounter(text) {
+			text = text.replace(/(^\s*)|(\s*$)/gi, "");
+			text = text.replace(/[ ]{2,}/gi, " ");
+			return text.split(" ").length;
+		}
+
+		console.log(wordsCounter("     Hello,       from Automaton team  "));
+	</script>
+
+	<body>
+
+</html>
